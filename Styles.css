@@ -1,0 +1,9 @@
+.popout:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+  }
+  
+  .custom-video-size {
+    max-width: 800px;
+    margin: 0 auto;
+}

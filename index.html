@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>MYMDB: Ratings, Reviews, Actors</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body class="pt-5 pt-md-5">
+<header>
+    <nav class="navbar py-3 fixed-top navbar-expand-lg bg-body-tertiary ">
+        <div class="container-fluid">
+            <a class="navbar-brand mb-1 h1 " href="index.html">MyMDB</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="movies.html">Movies</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="person.html">Person</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="Studio&Producator.html">Studio & Producator</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="actors.html">Actors</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="actresses.html">Actresses</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="movies2.html">Movies #2</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="producers.html">Producers</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="Studioexecutive.html">Studio Executive</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="exceptii.html">Exceptii</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div class="d-flex justify-content-end">
+        <button id="theme-switcher" class="btn btn-primary me-3">
+            <svg id="moon-icon" 
+                 xmlns="http://www.w3.org/2000/svg" 
+                 width="16" 
+                 height="16" 
+                 fill="currentColor"
+                 class="bi bi-moon-fill" 
+                 viewBox="0 0 16 16">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278"/>
+            </svg>
+            <svg id="sun-icon" 
+                 xmlns="http://www.w3.org/2000/svg" 
+                 width="16" 
+                 height="16" 
+                 fill="currentColor"
+                 class="bi bi-sun-fill" 
+                 viewBox="0 0 16 16" 
+                 style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                     width="16" 
+                     height="16" 
+                     fill="currentColor"
+                     class="bi bi-brightness-high-fill" 
+                     viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </svg>
+        </button>
+
+        <script src="index.js"></script>
+    </nav>
+</header>
+
+<main class="pt-5 pt-md-5">
+    <div class="container mt-5">
+        <h2 class="ps-md-6">Popular Movies</h2>
+    </div>
+    <br>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- First Video -->
+            <div class="carousel-item active">
+                <div class="ratio ratio-16x9 custom-video-size">
+                    <iframe src="https://www.youtube.com/embed/Ew9ngL1GZvs" title="The Godfather"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block text-light">
+                    <h5>The Godfather</h5>
+                </div>
+            </div>
+            <!-- Second Video -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9 custom-video-size">
+                    <iframe src="https://www.youtube.com/embed/lc0UehYemQA?si=zzHwYFb8bbI1wGw2"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block text-light">
+                    <h5>Jurassic Park</h5>
+                </div>
+            </div>
+            <!-- Third Video -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9 custom-video-size">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t06RUxPbp_c?si=OMKM6PKx6sf1jJkf"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block text-light">
+                    <h5>Spider Man</h5>
+                </div>
+            </div>
+            <!-- Fourth Video -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9 custom-video-size">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eHcZlPpNt0Q?si=vdJogVyg_7jL-AC6"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block text-light">
+                    <h5>The Lion King</h5>
+                </div>
+            </div>
+            <!-- Fifth Video -->
+            <div class="carousel-item">
+                <div class="ratio ratio-16x9 custom-video-size">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CHekzSiZjrY?si=pJauDrgjbSGCVTRz"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block text-light">
+                    <h5>Titanic</h5>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container mt-5">
+        <h2 class=" ps-md-6">Popular Actors</h2>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Actor 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/LeonardoDiCaprio.png" class="card-img-top" alt="Leonardo DiCaprio">
+                    <div class="card-body">
+                        <h5 class="card-title">Leonardo DiCaprio</h5>
+                        <p class="card-text">Leonardo Wilhelm DiCaprio is an American actor and film producer.
+                            Known for his work in biographical and period films, he is the recipient of numerous
+                            accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe
+                            Awards.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Actor 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/MargotRobbie.png" class="card-img-top" alt="Margot Robbie">
+                    <div class="card-body">
+                        <h5 class="card-title">Margot Robbie</h5>
+                        <p class="card-text">Margot Elise Robbie is an Australian actress and producer.
+                            Known for her work in both blockbuster and independent films, she has received various
+                            accolades, including nominations for two Academy Awards, five BAFTA Awards and six Golden
+                            Globe Awards.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Actor 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/RobertDowneyJr.png" class="card-img-top" alt="Robert Downey Jr">
+                    <div class="card-body">
+                        <h5 class="card-title">Robert Downey Jr.</h5>
+                        <p class="card-text">Robert John Downey Jr. is an American actor and singer.
+                            His career has been characterized by critical success in his youth, followed by a period of
+                            substance abuse and legal troubles, and a surge in popular and commercial success later in
+                            his career.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <!-- Actor 4 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/Zendaya.png" class="card-img-top" alt="Zendaya">
+                    <div class="card-body">
+                        <h5 class="card-title">Zendaya</h5>
+                        <p class="card-text">Zendaya Maree Stoermer Coleman is an American actress and singer.
+                            Known mononymously as Zendaya, she has received various accolades, including two Primetime
+                            Emmy Awards and a Golden Globe Award.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Actor 5 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/Tom-Cruise.png" class="card-img-top" alt="Tom Cruise">
+                    <div class="card-body">
+                        <h5 class="card-title">Tom Cruise</h5>
+                        <p class="card-text">Thomas Cruise Mapother IV, known professionally as Tom Cruise, is an
+                            American actor.
+                            Regarded as a Hollywood icon, he has received various accolades, including an Honorary Palme
+                            d'Or, two Saturn Awards, and three Golden Globe Awards, in addition to nominations for four
+                            Academy Awards and a BAFTA Award.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Actor 6 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/RyanReynolds.png" class="card-img-top" alt="Ryan Reynolds">
+                    <div class="card-body">
+                        <h5 class="card-title">Ryan Reynolds</h5>
+                        <p class="card-text">Ryan Rodney Reynolds is a Canadian-American actor, producer and
+                            businessman.
+                            He began his career starring in the Canadian teen soap opera Hillside, and had minor roles
+                            before landing the lead role on the sitcom Two Guys and a Girl between 1998 and 2001.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="ps-6">Streaming platforms</h2>
+        <div class="row justify-content-center">
+
+            <div class="card border-0 rounded" style="width: 100px; height: 100px;">
+                <a href="https://www.netflix.com" class="popout d-flex align-items-center justify-content-center"
+                   style="height: 100%;">
+                    <img src="images/Netflix.png" alt="Netflix" class="img-fluid"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </a>
+            </div>
+
+            <div class="card border-0 rounded" style="width: 100px; height: 100px;">
+                <a href="https://www.hulu.com" class="popout d-flex align-items-center justify-content-center"
+                   style="height: 100%;">
+                    <img src="images/hulu.png" alt="hulu" class="img-fluid"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </a>
+            </div>
+
+            <div class="card border-0 rounded" style="width: 100px; height: 100px;">
+                <a href="https://www.disneyplus.com" class="popout d-flex align-items-center justify-content-center"
+                   style="height: 100%;">
+                    <img src="images/Disney+.png" alt="Disney+" class="img-fluid"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </a>
+            </div>
+
+            <div class="card border-0 rounded" style="width: 100px; height: 100px;">
+                <a href="https://www.hbomax.com" class="popout d-flex align-items-center justify-content-center"
+                   style="height: 100%;">
+                    <img src="images/HBOmax.png" alt="HBOmax" class="img-fluid"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </a>
+            </div>
+
+            <div class="card border-0 rounded" style="width: 100px; height: 100px;">
+                <a href="https://www.primevideo.com" class="popout d-flex align-items-center justify-content-center"
+                   style="height: 100%;">
+                    <img src="images/prime.png" alt="Netflix" class="img-fluid"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="ps-6">About</h2>
+        <p class="ps-6">This project was a part of a university assignment about movie databases. I found the idea
+            interesting and decided to expand on it, with <a
+                    class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover "
+                    href="https://www.imdb.com/">IMDB</a> as a source of inspiration.</p>
+
+        <h3 class="ps-6 mt-4">My Database Course Assignments</h3>
+        <p class="ps-6">You can download my assignments here:</p>
+        <div class="ps-6">
+            <a href="files/Subiect colocviul de laborator 11.pdf" download="Database Midterm Task"
+               class="btn btn-secondary mb-3">My Database Midterm</a>
+            <br>
+            <a href="files/Tema pentru colocviul de laborator.pdf" download="DatabaseFinal Task"
+               class="btn btn-secondary mb-5">My Database Final</a>
+            <br>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-body-tertiary text-center py-3 mt-auto">
+    <p class="mb-0">© 2023 MYMDB</p>
+</footer>
+
+</body>
+</html>

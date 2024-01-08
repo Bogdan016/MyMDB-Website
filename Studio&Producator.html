@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>MYMDB: Ratings, Reviews, Actors</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar py-3 fixed-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-1 h1" href="Studio&Producator.html">Studio & Producator</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Menu
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="movies.html">Movies</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="person.html">Person</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Studio&Producator.html">Studio & Producator</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="actors.html">Actors</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="actresses.html">Actresses</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="movies2.html">Movies #2</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="producers.html">Producers</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="Studioexecutive.html">Studio Executive</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="exceptii.html">Exceptii</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button id="theme-switcher" class="btn btn-primary me-3">
+          <svg
+            id="moon-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-moon-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278"
+            />
+          </svg>
+          <svg
+            id="sun-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-sun-fill"
+            viewBox="0 0 16 16"
+            style="display: none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-brightness-high-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+              />
+            </svg>
+          </svg>
+        </button>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+      </nav>
+    </header>
+
+    <!-- Cerinta -->
+    <div class="container mt-5" style="padding-top: 70px">
+      <div class="card">
+        <div class="card-header">Cerință</div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>
+              Să se afișeze detaliile studioului și producătorului ce au produs un anumit film.
+            </p>
+            <footer class="blockquote-footer">Ex: filmul ‘Barry’, 2018.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="container mt-4">
+      <div class="form-floating mb-4">
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Enter movie title"/>
+        <label for="title">Introdu Titlul Filmului</label>
+      </div>
+      <div class="form-floating mb-4">
+        <input
+          type="number"
+          class="form-control"
+          id="year"
+          placeholder="Enter movie year"/>
+        <label for="year">Introdu Anul Filmului</label>
+      </div>
+      <div class="mb-3">
+        <button id="submitBtn" class="btn btn-primary">Submit</button>
+      </div>
+
+      <!-- Table: -->
+      <div class="container mt-5">
+        <table id="film" class="table table-striped">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Notification</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Nu s-au găsit rezultate.</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container mt-5 pb-5">
+      <footer class="bg-body-tertiary text-center py-3 mt-auto fixed-bottom">
+        <p class="mb-0">© 2023 MYMDB</p>
+      </footer>
+    </div>
+  </body>
+</html>
