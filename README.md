@@ -19,3 +19,4 @@ I found the idea interesting and decided to expand on it, with IMDB as a source 
 
 ![Exercise Example](images/SiteExerciseexample.png)
 
+![Exercise Example 2](images/SiteExerciseexample2.png)
