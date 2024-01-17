@@ -17,7 +17,7 @@ I found the idea interesting and decided to expand on it, with IMDB as a source 
 1. Clone the project from the GitHub repository.
 2. Configure the MySQL database.
 3. Run the Spring Boot application.
-4. Access the web interface and explore the features.
+4. Access the web interface.
 
 # Examples
 
